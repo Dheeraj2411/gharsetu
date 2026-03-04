@@ -23,7 +23,7 @@ class ListingController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Listing/Create');
     }
 
     /**
@@ -31,16 +31,17 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Listing::create($request->all());
+        return redirect()->route('listing.index')->with('success', 'Listing created successfully');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Listing $listing)
     {
         return Inertia::render('Listing/Show', [
-            'listing' => Listing::all()
+            'listing' => $listing
         ]);
     }
 

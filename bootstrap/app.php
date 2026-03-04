@@ -18,9 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
             HandleInertiaRequests::class,
         ]);
     })
-    ->withMiddleware(function (Middleware $middleware): void {
-        //
-    })
+
     ->withExceptions(function (Exceptions $exceptions): void {
         //
     })->create();

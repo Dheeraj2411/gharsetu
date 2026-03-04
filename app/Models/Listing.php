@@ -12,10 +12,14 @@ class Listing extends Model
         'beds',
         'baths',
         'area',
+        'state',
         'city',
-        'code',
-        'street',
-        'street_nr',
-        'price'
+        'pincode',
+        'address',
+        'address_line',
+        'price',
+        'property_type',
+        'listing_type',
+        'is_featured'
     ];
 }

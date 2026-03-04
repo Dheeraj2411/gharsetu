@@ -6,4 +6,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/show', [IndexController::class, 'show']);
-Route::resource('listing', ListingController::class)->only(['index', 'show']);//if we specify that which routes of function need then only that routes are call or render and rest of all route are not render
+Route::resource('listing', ListingController::class)->only(['index', 'show','create','store']);
+//if we specify that which routes of function need then only that routes are call or render and rest of all route are not render

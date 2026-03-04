@@ -4,7 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Faker\Factory as FakerFactory;
-
+use Illuminate\Notifications\DatabaseNotification;
+use Illuminate\Support\Facades\Gate;
+use App\Policies\NotificationPolicy;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -23,5 +25,9 @@ class AppServiceProvider extends ServiceProvider
         app()->singleton(\Faker\Generator::class, function () {
             return FakerFactory::create('en_IN');
         });
+        Gate::policy(
+            DatabaseNotification::class,
+            NotificationPolicy::class
+        );
     }
 }

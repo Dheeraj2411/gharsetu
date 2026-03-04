@@ -13,6 +13,9 @@ export default [
                 ecmaVersion: 2020,
                 sourceType: "module",
             },
+            globals: {
+                ...globals.browser,
+            },
         },
         plugins: {
             vue,
